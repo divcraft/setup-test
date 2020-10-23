@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const mongoose = require('./mongoose');
-
 const testRouter = require('./routes/test');
 
 const app = express();
@@ -19,17 +18,15 @@ app.use(bodyParser.json());
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
-   app.use(express.static('__client/build'));
-   app.get('/ ', (req, res) => {
-      res.sendFile(path.resolve(__dirname, '../__client/build/index.html'));
-   });
+  app.use(express.static('__client/build'));
+  app.get('/ ', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../__client/build/index.html'));
+  });
 }
 
 app.use('/api', testRouter);
 
 // eslint-disable-next-line no-console
 app.listen(PORT, () =>
-   console.log(`Server is listening at http://localhost:${PORT} ...`)
+  console.log(`Server is listening at http://localhost:${PORT} ...`)
 );
-
-

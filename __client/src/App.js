@@ -35,9 +35,7 @@ export default function App() {
   }, [dataUpdateFlague]);
   return (
     <>
-      <h1>
-        Hello world!
-      </h1>
+      <h1>Hello world!</h1>
       <div>{api}</div>
       <form action="get">
         <input type="text" value={content} onChange={handleChange} />
@@ -46,9 +44,9 @@ export default function App() {
         </button>
       </form>
       <ul>
-        {test
-          && test.map(({ _id, content }) => (
-            <li key={_id}>{content}</li>))}
+        {test &&
+          // eslint-disable-next-line no-shadow
+          test.map(({ _id, content }) => <li key={_id}>{content}</li>)}
       </ul>
     </>
   );
