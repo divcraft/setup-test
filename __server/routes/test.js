@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
 
 router.get('/show-test', (req, res) => {
   Test.find({}, (err, data) => {
-    // eslint-disable-next-line no-console
     if (err) return console.log(err);
     return res.json(data);
   });

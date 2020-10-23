@@ -26,7 +26,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/api', testRouter);
 
-// eslint-disable-next-line no-console
 app.listen(PORT, () =>
   console.log(`Server is listening at http://localhost:${PORT} ...`)
 );
