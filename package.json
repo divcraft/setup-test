@@ -1,0 +1,23 @@
+{
+    "name": "divcraft-blog-cms",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "dependencies": {
+        "concurrently": "^5.3.0",
+        "dotenv": "^8.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.5"
+    },
+    "scripts": {
+        "start": "node __server/index.js",
+        "server": "nodemon __server/index.js",
+        "client": "npm start --prefix __client",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix __client && npm install --prefix __server && npm run build --prefix __client"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
